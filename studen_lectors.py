@@ -28,13 +28,11 @@ class Mentor:
 
 class Lectorer (Mentor):
     def _init_ (self,name,surname):
-        self.name = name
-        self.surname = surname
+        super(). _init_(name,surname)
         self.courses_attached = []
 class Reviewer (Mentor):
     def _init_ (self, name, surname):
-        self.name = name
-        self.surname = surname
+        super(). _init_ (name, surname)
 class Mentor(Lectorer,Reviewer):
      def _init_ (self, name, surname):
         self.name = name
