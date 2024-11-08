@@ -1,51 +1,34 @@
 class Student:
-    def __init__(self, name, surname, gender):
-        self.name = name
-        self.surname = surname
+    def _init_ (self, l_name, f_name, group, gender):
+        self.l_name = l_name
+        self.f_name = f_name
         self.gender = gender
-        self.finished_courses = []
+        self.group = group
+        self.finished_courses = []  
         self.courses_in_progress = []
         self.grades = {}
- 
+    
     def add_courses(self, course_name):
-        self.finished_courses.append(course_name)   
- 
-     
+        self.finished_courses.append(course_name)
+
+
 class Mentor:
-    def __init__(self, name, surname):
-        self.name = name
-        self.surname = surname
+    def _init_ (self, l_name, f_name):
+        self.l_name = l_name
+        self.f_name = f_name
+        self.courses_attached = []
+    
+class Lectorer(Mentor):
+    def _init_ (self, l_name, f_name):
+        super(). __init__(l_name, f_name, )
         self.courses_attached = []
 
-    def rate_hw(self, student, course, grade):
-        if isinstance(student, Student) and course in self.courses_attached and course in student.courses_in_progress:
-            if course in student.grades:
-                student.grades[course] += [grade]
-            else:
-                student.grades[course] = [grade]
-        else:
-            return 'Ошибка'
+class Reviewer(Mentor):
+    def _init_(self, l_name, f_name):
+         super()._init_(l_name, f_name)
+         self.courses_attached = []
 
-class Lectorer (Mentor):
-    def _init_ (self,name,surname):
-        super(). _init_(name,surname)
-        self.courses_attached = []
-class Reviewer (Mentor):
-    def _init_ (self, name, surname):
-        super(). _init_ (name, surname)
-class Mentor(Lectorer,Reviewer):
-     def _init_ (self, name, surname):
-        self.name = name
-        self.surname = surname
- 
-best_student = Student('Ruoy', 'Eman', 'your_gender')
-best_student.courses_in_progress += ['Python']
- 
-cool_mentor = Mentor('Some', 'Buddy')
-cool_mentor.courses_attached += ['Python']
- 
-cool_mentor.rate_hw(best_student, 'Python', 10)
-cool_mentor.rate_hw(best_student, 'Python', 10)
-cool_mentor.rate_hw(best_student, 'Python', 10)
- 
-print(best_student.grades)
+    
+        
+
+
