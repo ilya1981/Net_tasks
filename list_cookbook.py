@@ -1,4 +1,3 @@
-import json
 with open('Receipt.txt', encoding='utf-8') as file:
     cook_book = {}
     for item in file:
