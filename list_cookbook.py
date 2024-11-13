@@ -1,3 +1,4 @@
+from pprint import pprint
 with open('Receipt.txt', encoding='utf-8') as file:
     cook_book = {}
     for item in file:
@@ -10,6 +11,6 @@ with open('Receipt.txt', encoding='utf-8') as file:
             ingredients.append({'ingridient_name': product, 'quantity': quantity, 'measure': name })
             cook_book[receipt] = ingredients
         file.readline()
-    print(cook_book)
+    pprint(cook_book)
 
     
